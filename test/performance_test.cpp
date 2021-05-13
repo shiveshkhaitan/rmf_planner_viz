@@ -50,10 +50,13 @@ int main(int argc, char* argv[])
     return 0;
   }
 
+  rmf_performance_tests::scenario::Arguments arguments{};
+  arguments.scenario_file = argv[1];
+
   rmf_performance_tests::scenario::Description scenario;
   try
   {
-    parse(argv[1], scenario);
+    parse(arguments, scenario);
   }
   catch (std::runtime_error& e)
   {
